@@ -1,6 +1,6 @@
 import osUtils from "os-utils";
 import os from "os";
-import fs, { stat } from "fs";
+import fs from "fs";
 
 const POLLING_INTERVAL = 500;
 
