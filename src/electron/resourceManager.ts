@@ -9,15 +9,15 @@ export function pollResources(mainWindow: BrowserWindow) {
   setInterval(async () => {
     const cpuUsage = await getCpuUsage();
     const ramUsage = getRamUsage();
-    const StorageData = getStorageData();
+    const storageData = getStorageData();
 
     mainWindow.webContents.send("statistics", {
       cpuUsage,
       ramUsage,
-      storageUsage: StorageData.usage,
+      storageUsage: storageData.usage,
     });
 
-    console.log({ cpuUsage, ramUsage, storageUsage: StorageData.usage });
+    console.log({ cpuUsage, ramUsage, storageUsage: storageData.usage });
   }, POLLING_INTERVAL);
 }
 
