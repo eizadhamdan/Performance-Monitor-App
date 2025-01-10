@@ -1,10 +1,11 @@
 const electron = require("electron");
 
 electron.contextBridge.exposeInMainWorld("electron", {
-  subscribeStatistics: (callback) =>
-    ipcOn("statistics", (stats) => {
+  subscribeStatistics: (callback) => {
+    return ipcOn("statistics", (stats) => {
       callback(stats);
-    }),
+    });
+  },
   // subscribeChangeView: (callback) =>
   //   ipcOn("changeView", (view) => {
   //     callback(view);
