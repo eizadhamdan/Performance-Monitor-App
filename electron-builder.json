@@ -1,7 +1,7 @@
 {
     "appId": "com.e-hamdan.myapp",
     "files": ["dist-electron", "dist-react"],
-    "extraResources": ["dist-electron/preload.cjs"],
+    "extraResources": ["dist-electron/preload.cjs", "src/ui/assets/**"],
     "icon": "./desktopIcon.png",
     "mac": {
         "target": "dmg"
