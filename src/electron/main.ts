@@ -11,6 +11,7 @@ app.on("ready", () => {
     webPreferences: {
       preload: getPreloadPath(),
     },
+    frame: false,
   });
   if (isDev()) {
     mainWindow.loadURL("http://localhost:5123");
