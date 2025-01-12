@@ -37,6 +37,8 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <div className="appTitle">Performance Monitor App</div>
+      <div className="creatorOfApp">Made by Eizad Hamdan</div>
       <div className="main">
         <div>
           <SelectOption

@@ -28,7 +28,12 @@ export function BaseChart(props: BaseChartProps) {
           isAnimationActive={false}
         />
         <XAxis stroke="transparent" height={0} />
-        <YAxis domain={[0, 100]} stroke="transparent" width={0} />
+        <YAxis
+          domain={[0, 100]}
+          stroke="#CCC"
+          width={40}
+          tick={{ fill: "#f1f1f1", fontSize: 10, fontWeight: "bold" }}
+        />
       </AreaChart>
     </ResponsiveContainer>
   );
