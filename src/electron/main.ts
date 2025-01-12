@@ -1,8 +1,7 @@
-import { app, BrowserWindow, Tray, ipcMain, Menu } from "electron";
-import { ipcMainHandle, isDev } from "./util.js";
+import { app, BrowserWindow, Menu } from "electron";
+import { ipcMainHandle, ipcMainOn, isDev } from "./util.js";
 import { getStaticData, pollResources } from "./resourceManager.js";
-import { getAssetPath, getPreloadPath, getUIPath } from "./pathResolver.js";
-import path from "path";
+import { getPreloadPath, getUIPath } from "./pathResolver.js";
 import { createTray } from "./tray.js";
 import { createMenu } from "./menu.js";
 
@@ -11,6 +10,7 @@ app.on("ready", () => {
     webPreferences: {
       preload: getPreloadPath(),
     },
+    // disables default system frame
     frame: false,
   });
   if (isDev()) {
@@ -25,6 +25,20 @@ app.on("ready", () => {
     return getStaticData();
   });
 
+  ipcMainOn("sendFrameAction", (payload) => {
+    switch (payload) {
+      case "CLOSE":
+        mainWindow.close();
+        break;
+      case "MAXIMIZE":
+        mainWindow.maximize();
+        break;
+      case "MINIMIZE":
+        mainWindow.minimize();
+        break;
+    }
+  });
+
   createTray(mainWindow);
   handleCloseEvents(mainWindow);
   createMenu(mainWindow);
@@ -37,7 +51,6 @@ function handleCloseEvents(mainWindow: BrowserWindow) {
     if (willClose) {
       return;
     }
-
     e.preventDefault();
     mainWindow.hide();
 

@@ -66,10 +66,22 @@ header button {
   background-color: red;
 }
 
+#close:hover {
+  background-color: #b30000; /* Slightly darker red */
+}
+
 #minimize {
   background-color: yellow;
 }
 
+#minimize:hover {
+  background-color: #e6e600; /* Slightly darker yellow */
+}
+
 #maximize {
   background-color: lime;
+}
+
+#maximize:hover {
+  background-color: #66b300; /* Slightly darker lime */
 }
