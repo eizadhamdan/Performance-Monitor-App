@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
-import { useStatistics } from "./useStatistics.ts";
-import { Chart } from "./Chart.tsx";
+import { useStatistics } from "./useStatistics.js";
+import { Chart } from "./Chart.js";
 
 function App() {
-  // const staticData = useStaticData();
+  const staticData = useStaticData();
   const statistics = useStatistics(10);
   const [activeView, setActiveView] = useState<View>("CPU");
   const cpuUsages = useMemo(
@@ -19,7 +19,6 @@ function App() {
     () => statistics.map((stat) => stat.storageUsage),
     [statistics]
   );
-
   const activeUsages = useMemo(() => {
     switch (activeView) {
       case "CPU":
@@ -37,24 +36,7 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <button
-          id="minimize"
-          onClick={() => window.electron.sendFrameAction("MINIMIZE")}
-        />
-        <button
-          id="maximize"
-          onClick={() => window.electron.sendFrameAction("MAXIMIZE")}
-        />
-        <button
-          id="close"
-          onClick={() => window.electron.sendFrameAction("CLOSE")}
-        />
-      </header>
-      <div style={{ height: 120 }}>
-        <Chart data={activeUsages} maxDataPoints={10}></Chart>
-      </div>
-      {/* <Header />
+      <Header />
       <div className="main">
         <div>
           <SelectOption
@@ -86,60 +68,60 @@ function App() {
             maxDataPoints={10}
           />
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
 
-// function SelectOption(props: {
-//   title: string;
-//   view: View;
-//   subTitle: string;
-//   data: number[];
-//   onClick: () => void;
-// }) {
-//   return (
-//     <button className="selectOption" onClick={props.onClick}>
-//       <div className="selectOptionTitle">
-//         <div>{props.title}</div>
-//         <div>{props.subTitle}</div>
-//       </div>
-//       <div className="selectOptionChart">
-//         <Chart selectedView={props.view} data={props.data} maxDataPoints={10} />
-//       </div>
-//     </button>
-//   );
-// }
+function SelectOption(props: {
+  title: string;
+  view: View;
+  subTitle: string;
+  data: number[];
+  onClick: () => void;
+}) {
+  return (
+    <button className="selectOption" onClick={props.onClick}>
+      <div className="selectOptionTitle">
+        <div>{props.title}</div>
+        <div>{props.subTitle}</div>
+      </div>
+      <div className="selectOptionChart">
+        <Chart selectedView={props.view} data={props.data} maxDataPoints={10} />
+      </div>
+    </button>
+  );
+}
 
-// function Header() {
-//   return (
-//     <header>
-//       <button
-//         id="close"
-//         onClick={() => window.electron.sendFrameAction("CLOSE")}
-//       />
-//       <button
-//         id="minimize"
-//         onClick={() => window.electron.sendFrameAction("MINIMIZE")}
-//       />
-//       <button
-//         id="maximize"
-//         onClick={() => window.electron.sendFrameAction("MAXIMIZE")}
-//       />
-//     </header>
-//   );
-// }
+function Header() {
+  return (
+    <header>
+      <button
+        id="minimize"
+        onClick={() => window.electron.sendFrameAction("MINIMIZE")}
+      />
+      <button
+        id="maximize"
+        onClick={() => window.electron.sendFrameAction("MAXIMIZE")}
+      />
+      <button
+        id="close"
+        onClick={() => window.electron.sendFrameAction("CLOSE")}
+      />
+    </header>
+  );
+}
 
-// function useStaticData() {
-//   const [staticData, setStaticData] = useState<StaticData | null>(null);
+function useStaticData() {
+  const [staticData, setStaticData] = useState<StaticData | null>(null);
 
-//   useEffect(() => {
-//     (async () => {
-//       setStaticData(await window.electron.getStaticData());
-//     })();
-//   }, []);
+  useEffect(() => {
+    (async () => {
+      setStaticData(await window.electron.getStaticData());
+    })();
+  }, []);
 
-//   return staticData;
-// }
+  return staticData;
+}
 
 export default App;
