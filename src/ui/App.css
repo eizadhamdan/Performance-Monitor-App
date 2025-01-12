@@ -60,6 +60,7 @@ header button {
   height: 1rem;
   margin: 0.25rem;
   -webkit-app-region: no-drag;
+  position: relative;
 }
 
 #close {
@@ -70,6 +71,17 @@ header button {
   background-color: #b30000; /* Slightly darker red */
 }
 
+#close:hover::after {
+  content: "×";
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 0.9rem;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #minimize {
   background-color: yellow;
 }
@@ -78,10 +90,32 @@ header button {
   background-color: #e6e600; /* Slightly darker yellow */
 }
 
+#minimize:hover::after {
+  content: "–";
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 0.9rem;
+  font-weight: bold;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #maximize {
   background-color: lime;
 }
 
 #maximize:hover {
   background-color: #66b300; /* Slightly darker lime */
+}
+
+#maximize:hover::after {
+  content: "□";
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 0.9rem;
+  font-weight: bold;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
