@@ -37,7 +37,24 @@ export function Chart(props: ChartProps) {
     ];
   }, [props.data, props.maxDataPoints]);
 
+  const currentPercentage = props.data[props.data.length - 1] * 100 || 0;
+
   return (
-    <BaseChart data={preparedData} fill={color.fill} stroke={color.stroke} />
+    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+      <BaseChart data={preparedData} fill={color.fill} stroke={color.stroke} />
+      <div
+        style={{
+          position: "absolute",
+          top: "10px",
+          right: "10px",
+          color: color.stroke,
+          fontSize: "18px",
+          fontWeight: "medium",
+          fontFamily: "sans-serif",
+        }}
+      >
+        {`${currentPercentage.toFixed(1)}%`}
+      </div>
+    </div>
   );
 }
