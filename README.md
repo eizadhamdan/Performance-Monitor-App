@@ -18,6 +18,19 @@ Welcome to the **Performance Monitor App** repository! This lightweight and intu
   - Minimize the app to the system tray to stay out of your way while you work.
   - Quickly access the app or quit it via the system tray icon.
 
+## Screenshots
+
+Here are some example screenshots of the app in action:
+
+1. **CPU Usage**: Displays the CPU usage chart and percentage.
+   ![CPU Usage](pictures/pic1.png)
+
+2. **RAM Usage**: Displays the RAM usage chart and percentage.
+   ![RAM Usage](pictures/pic2.png)
+
+3. **Storage Usage**: Displays the Storage usage chart and percentage.
+   ![Storage Usage](pictures/pic3.png)
+
 ## Developer Setup Instructions
 
 Follow these steps to clone the repository and set up the project locally:
