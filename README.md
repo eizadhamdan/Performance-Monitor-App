@@ -33,7 +33,7 @@ Before you begin, make sure you have the following installed on your system:
 
 ### Steps to Clone and Set Up
 
-1. **Clone the Repository**  
+1. **Clone the Repository**:
    Open your terminal and run:
    ```bash
    https://github.com/eizadhamdan/Performance-Monitor-App.git
@@ -43,7 +43,7 @@ Before you begin, make sure you have the following installed on your system:
    ```bash
    cd Performance-Monitor-App
    ```
-3. **Install Dependencies**
+3. **Install Dependencies**:
    Use npm to install the required dependencies:
    ```bash
    npm install
@@ -131,14 +131,6 @@ Download the installer file specific to your operating system and follow the ins
 - **Windows**: Download the `.exe` file and run it.
 - **Linux**: Download the `.AppImage` file and run it.
 - **macOS**: Download the `.dmg` file and run it.
-
-## Tech Stack
-
-This app is built using:
-
-- **Electron.js** for cross-platform desktop application development.
-- **React.js** for an intuitive user interface.
-- **Recharts** for dynamic and interactive data visualization.
 
 ## Who Is It For?
 
