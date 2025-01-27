@@ -1,6 +1,6 @@
-# Performance Monitor App 🚀
+# Performance Monitor App
 
-Welcome to the **Performance Monitor App** repository! 🎉 This lightweight and intuitive cross-platform desktop application is designed to help you monitor your computer's performance in real-time, giving you valuable insights into your system's resource usage.
+Welcome to the **Performance Monitor App** repository! This lightweight and intuitive cross-platform desktop application is designed to help you monitor your computer's performance in real-time, giving you valuable insights into your system's resource usage.
 
 ## Key Features
 
