@@ -36,7 +36,7 @@ Before you begin, make sure you have the following installed on your system:
 1. **Clone the Repository**:
    Open your terminal and run:
    ```bash
-   https://github.com/eizadhamdan/Performance-Monitor-App.git
+   git clone https://github.com/eizadhamdan/Performance-Monitor-App.git
    ```
 2. **Navigate to the Project Directory**:
    Move into the cloned repository's directory:
