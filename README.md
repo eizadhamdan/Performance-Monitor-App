@@ -23,13 +23,13 @@ Welcome to the **Performance Monitor App** repository! This lightweight and intu
 Here are some example screenshots of the app in action:
 
 1. **CPU Usage**: Displays the CPU usage chart and percentage.
-   ![CPU Usage](pictures/pic1.png)
+   ![CPU Usage](Pictures/pic1.png)
 
 2. **RAM Usage**: Displays the RAM usage chart and percentage.
-   ![RAM Usage](pictures/pic2.png)
+   ![RAM Usage](Pictures/pic2.png)
 
 3. **Storage Usage**: Displays the Storage usage chart and percentage.
-   ![Storage Usage](pictures/pic3.png)
+   ![Storage Usage](Pictures/pic3.png)
 
 ## Developer Setup Instructions
 
